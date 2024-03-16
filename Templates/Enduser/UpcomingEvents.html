@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management portal-End User</title>
+    <link rel="stylesheet" href="/stylesheets/Adminhomepage.css" type="text/css">
+    <script>// JavaScript for toggling submenus
+
+        function toggleSubmenu(event) {
+          var submenu = event.target.nextElementSibling;
+          if (submenu.style.display === "block") {
+            submenu.style.display = "none";
+          } else {
+            submenu.style.display = "block";
+          }
+        }</script>
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+            <div class="profile">
+                <!-- <img src="/public/Stylesheets/blank-profile.png" alt="profile_picture"> -->
+                <img src="/stylesheets/blank-profile.png">
+                <h3>User name</h3>
+                <p>User Designation</p>
+            </div>
+            <ul>
+                <li>
+                    <a href="./UpcomingEvents.html" class="active" >
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Up coming Events</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="CompletedEvents.html"  >
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">CompletedEvents</span>
+                    </a>
+                </li>
+
+            </ul>
+            <!-- <a href="/login">Log out</a> -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <form  id="logoutForm" method="POST" action="/logout" align="center" >
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+        </div>
+<!-- ------------------------------- -->
+    <br>
+    <br>
+
+<form id-="UpcomingEvents" method="POST" action="" align="center" >
+ <div id="UpcomingEvents" align="center">
+    <h1>Upcoming Events</h1>
+
+     <br>
+    <br>
+     <br>
+    <br>
+     <table>
+    <tr>
+        <th>S no</th>
+        <th>Event Name</th>
+        <th>Event Type</th>
+        <th>Date of Event</th>
+        <th>Status</th>
+        <th>Submitted by</th>
+        <th>Submission On</th>
+        <th>Comments</th>
+        <th>Select </th>
+    </tr>
+    <tr>
+        <td>
+            1
+        </td>
+        <td>
+            Townhall
+        </td>
+        <td>
+            In-person/Virtual
+        </td>
+        <td>
+            25-Mar-2024
+        </td>
+        <td>
+            Approved
+        </td>
+        <td>
+            Siva
+        </td>
+        <td>
+            10-Mar-2024
+        </td>
+        <td>
+            Approved
+        </td>
+        <td>
+            <input type="radio" id="cb1" name="fav_language" value="">
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            2
+        </td>
+        <td>
+            AMA
+        </td>
+        <td>
+            In-person
+        </td>
+        <td>
+            25-Mar-2024
+        </td>
+        <td>
+            Approved
+        </td>
+        <td>
+            Siva
+        </td>
+        <td>
+            10-Mar-2024
+        </td>
+        <td>
+            Approved
+        </td>
+
+        <td>
+            <input type="radio" id="cb2" name="fav_language" value="">
+        </td>
+    </tr>
+  </table>
+     <br>
+     <br>
+     <button type="submit" id="register" onclick='DisplayRegistrationDiv()' >Register</button>
+
+     <div id="Registrationormdiv" style="display: none">
+        <h1>Register</h1>
+         <button id="CompleteRegister" >Complete Registration</button>
+     </div>
+<!--     <style>-->
+<!--                .hidden {-->
+<!--                    display: none;-->
+<!--                }-->
+<!--
+}-->
+<!--     </style>-->
+     <script>
+         function DisplayRegistrationDiv() {
+                     // document.getElementById(Registrationormdiv).display=true;
+                     document.getElementById("Registrationormdiv").click();
+                }
+     </script>
+<!--  <script>-->
+
+<!--        document.getElementById('register').addEventListener('click', function() {-->
+<!--            document.getElementById('Registrationormdiv').classList.remove('hidden');-->
+<!--            // document.getElementById('register').preventDefault();-->
+<!--            document.getElementById('Registrationormdiv').classList.add('display');-->
+<!--        });-->
+
+<!--        document.getElementById('CompleteRegister').addEventListener('click', function() {-->
+<!--            // Perform validation (if needed)-->
+<!--            // Call Python script for further validation-->
+<!--            fetch('/validateRegistration', {-->
+<!--                method: 'POST',-->
+<!--                headers: {-->
+<!--                    'Content-Type': 'application/json'-->
+<!--                },-->
+<!--                body: JSON.stringify({-->
+<!--                    username: document.getElementById('username').value,-->
+<!--                    email: document.getElementById('email').value,-->
+<!--                    password: document.getElementById('password').value-->
+<!--                })-->
+<!--            })-->
+<!--            .then(response => {-->
+<!--                if (response.ok) {-->
+<!--                    console.log('Validation successful');-->
+<!--                    // Optionally, redirect to a success page or perform other actions-->
+<!--                } else {-->
+<!--                    console.error('Validation failed');-->
+<!--                    // Optionally, show an error message or perform other actions-->
+<!--                }-->
+<!--            })-->
+<!--            .catch(error => {-->
+<!--                console.error('Error validating registration:', error);-->
+<!--                // Optionally, show an error message or perform other actions-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+
+ </div>
+ </form>
+</body>
+</html>

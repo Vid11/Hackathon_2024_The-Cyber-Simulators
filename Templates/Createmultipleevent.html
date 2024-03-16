@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management portal-Event Org</title>
+    <link rel="stylesheet" href="/stylesheets/Adminhomepage.css" type="text/css">
+    <script>// JavaScript for toggling submenus
+
+        function toggleSubmenu(event) {
+          var submenu = event.target.nextElementSibling;
+          if (submenu.style.display === "block") {
+            submenu.style.display = "none";
+          } else {
+            submenu.style.display = "block";
+          }
+        }</script>
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+            <div class="profile">
+                <!-- <img src="/public/Stylesheets/blank-profile.png" alt="profile_picture"> -->
+                <img src="/stylesheets/blank-profile.png">
+                <h3>User name</h3>
+                <p>User Designation</p>
+            </div>
+            <ul>
+                <li>
+                    <a href="./Dashboard.html" >
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+
+                    <a href="#" onclick="toggleSubmenu(event)">
+                      <span class="icon"><i class="fas fa-desktop"></i></span>
+                      <span class="item">Create Event</span></a>
+
+                    <!-- Submenu -->
+                    <ul class="submenu">
+                      <li><a href="./Createsingleevent.html">Create Single Event</a></li>
+                      <li><a href="./Createmultipleevent.html">Create Multiple Event</a></li>
+                    </ul>
+                </li>
+                 <li>
+
+                    <a href="#" onclick="toggleSubmenu(event)">
+                      <span class="icon"><i class="fas fa-desktop"></i></span>
+                      <span class="item">Event Status</span></a>
+
+                    <!-- Submenu -->
+                    <ul class="submenu">
+                       <li><a href="./ApprovedEvents.html">Approved Events</a></li>
+                        <li><a href="./PublishedEvents.html">Published Events</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="./Eventnotifications.html">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Event Notifications/Reminders</span>
+                    </a>
+                </li>
+
+            </ul>
+            <!-- <a href="/login">Log out</a> -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <form  id="logoutForm" method="POST" action="/logout" align="center" >
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+        </div>
+<!-- ------------------------------- -->
+
+<div id="CreateMultipleEvent" align="center">
+    <br>
+    <br>
+    <h1> Create Multiple Event</h1>
+
+    <br>
+    <br>
+
+        <p>
+            Click on downlod button to download sample document
+        </p>
+        <a href="/Format.xlsx" download="Format.xlsx">Download Sample</a>
+        <br>
+    <br>
+    <div>
+
+        <form id="uploadForm" enctype="multipart/form-data" method="POST" action="/upload">
+        <label for="excelFile">Select Excel file:</label>
+        <input type="file" id="excelFile" name="excelFile" accept=".xlsx, .xls"><br><br>
+        </form>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <button type="upload" id="upload">upload</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <script>
+            document.getElementById('upload').addEventListener('click', function() {
+                if(document.getElementById('upload').value){
+                // Perform validation (if needed)
+                // Save data (if needed)
+                alert('File uploaded successfully...!');
+                }
+                else{
+                    alert('Please uploaded file');
+                }
+            });
+
+        </script>
+    </div>
+    </div>
+
+</body>
+</html>

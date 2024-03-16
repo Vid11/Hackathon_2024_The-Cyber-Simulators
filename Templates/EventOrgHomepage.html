@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management portal-Event Org</title>
+    <link rel="stylesheet" href="/stylesheets/Adminhomepage.css" type="text/css">
+    <script>// JavaScript for toggling submenus
+
+        function toggleSubmenu(event) {
+          var submenu = event.target.nextElementSibling;
+          if (submenu.style.display === "block") {
+            submenu.style.display = "none";
+          } else {
+            submenu.style.display = "block";
+          }
+        }</script>
+</head>
+<body>
+
+
+<div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+            <div class="profile">
+                <!-- <img src="/public/Stylesheets/blank-profile.png" alt="profile_picture"> -->
+                <img src="/stylesheets/blank-profile.png">
+                <h3>User name</h3>
+                <p>User Designation</p>
+            </div>
+            <ul>
+                <li>
+                    <a href="./Dashboard.html" >
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+
+                    <a href="#" onclick="toggleSubmenu(event)">
+                      <span class="icon"><i class="fas fa-desktop"></i></span>
+                      <span class="item">Create Event</span></a>
+
+                    <!-- Submenu -->
+                    <ul class="submenu">
+                      <li><a href="./Createsingleevent.html">Create Single Event</a></li>
+                      <li><a href="./Createmultipleevent.html">Create Multiple Event</a></li>
+                    </ul>
+                </li>
+                 <li>
+
+                    <a href="#" onclick="toggleSubmenu(event)">
+                      <span class="icon"><i class="fas fa-desktop"></i></span>
+                      <span class="item">Event Status</span></a>
+
+                    <!-- Submenu -->
+                    <ul class="submenu">
+                       <li><a href="./ApprovedEvents.html">Approved Events</a></li>
+                        <li><a href="./PublishedEvents.html">Published Events</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="./Eventnotifications.html">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Event Notifications/Reminders</span>
+                    </a>
+                </li>
+
+            </ul>
+            <!-- <a href="/login">Log out</a> -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <form  id="logoutForm" method="POST" action="/logout" align="center" >
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+        </div>
+<!-- ------------------------------- -->
+
+<div id="defaultOpen" align="center" style="border: 0px solid #ccc; padding: 50px;">
+    <h1 align="center">Welcome to the Event Management and Registration Tool</h1>
+    <br>
+    <br>
+    <br>
+  <h3>
+<!--      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+      This tool is simple and automated tool that helps the event organizers to effortlessly setup, schedule and manage events.
+</h3>
+    <h3>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        This tool also allows an Participant Management, Event Administration , managing the attendance from captured data and drive reports like number of events conducted over a period, attendance metrics, statistics by group, event themes etc.
+  </h3>
+
+</div>
+
+
+</body>
+</html>
