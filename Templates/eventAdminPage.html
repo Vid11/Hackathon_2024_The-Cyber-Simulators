@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Tool</title>
+    <link rel="stylesheet" href="../stylesheets/Adminhomepage.css" type="text/css">
+    <link rel="stylesheet" href="../stylesheets/loginStyle.css" type="text/css">
+    </head>
+<body>
+
+<!--Left Navigation Option-->
+    <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+            <div class="profile">
+                <!-- <img src="/public/Stylesheets/blank-profile.png" alt="profile_picture"> -->
+                <img src="../stylesheets/images/profile_icon.jpg">
+                <h3>User name</h3>
+                <p>User role</p>
+            </div>
+            <ul>
+
+            <li>
+                    <a href="#" class="active" onclick="openPage(event, 'home')">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+
+                    <li>
+                   <a  href="#" class="active" onclick="openPage(event, 'approval')">
+                        <span class="icon"><i class="admin-aproval"></i></span>
+                        <span class="item">My Pending Approvals</span>
+                    </a>
+                </li>
+                <li>
+
+                    <li>
+                   <a href="#" class="active" onclick="openPage(event, 'activate')">
+                        <span class="icon"><i class="admin-activate"></i></span>
+                        <span class="item">Activation</span>
+                    </a>
+                </li>
+                <li>
+
+
+                <li>
+                    <a href="#" class="active" onclick="openPage(event, 'reports')">
+                        <span class="icon"><i class="admin-report"></i></span>
+                        <span class="centered">Reporting and Metrics</span>
+                    </a>
+                </li>
+                <li>
+
+            </ul>
+
+            <br>
+            <br>
+            <form  id="logoutForm" method="POST" action="/logout" align="center" >
+                <button class="button-15" type="submit">Logout</button>
+            </form>
+        </div>
+        </div>
+<!-- ------------------------------- -->
+
+<!--Contents displayed within options-->
+
+<!--HomePage-->
+<div id="home" class="tabcontent" align="center">
+      <h1 align="center">Welcome to the Event Management and Registration Tool</h1>
+    <br>
+    <br>
+    <br>
+  <p class="container"> <h3>
+    This tool is simple and automated tool that helps the event organizers to effortlessly setup, schedule and manage events.
+    </h3><h3>
+    This tool also allows an Participant Management, Event Administration , managing the attendance from captured data and drive
+    </h3><h3>
+    reports like number of events conducted over a period, attendance metrics, statistics by group, event themes etc.
+</h3> <p>
+ </div>
+
+<!-- ------------------------------- -->
+
+<!--Approvals-->
+<form id-="approval" method="POST" action="" align="center" >
+ <div id="approval" align="center" class="tabcontent">
+     <br>
+    <h1>My Pending Approvals</h1>
+     <br><br><br>
+     <table>
+    <tr>
+        <th>Sl No</th>
+        <th>Event Name</th>
+        <th>Event Type</th>
+        <th>Scheduled On</th>
+        <th>Submitted by</th>
+        <th>Submission On</th>
+        <th>Select to approve</th>
+    </tr>
+
+<!--{% for row in data %} Implement here to fetch entered value-->
+<!--                <tr>-->
+<!--                    <td>{{ row[0] }}</td>-->
+<!--                    <td>{{ row[1] }}</td>-->
+<!--                    <td>{{ row[2] }}</td>-->
+<!--                    <td>{{ row[3] }}</td>-->
+<!--                    <td>{{ row[4] }}</td>-->
+<!--                    <td>{{ row[5] }}</td>-->
+<!--                    <td>{{ row[6] }}</td>-->
+<!--                    <td>{{ row[7] }}</td>-->
+<!--                    <td><input type="radio" name="row_checkbox" value="{{ row[0] }}"></td>-->
+<!--                </tr>-->
+
+
+<tr>
+        <td>
+            1
+        </td>
+        <td>
+            Townhall
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            25-Mar-2024
+        </td>
+        <td>
+            Organizer1
+        </td>
+        <td>
+            10-Apr-2024
+        </td>
+        <td>
+            <input type="checkbox" id="cb1" name="fav_language" value="">
+        </td>
+    </tr>
+
+      <tr>
+        <td>
+            2
+        </td>
+        <td>
+            AMA
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            25-Jun-2024
+        </td>
+        <td>
+            Organizer2
+        </td>
+        <td>
+            20-Mar-2024
+        </td>
+        <td>
+            <input type="checkbox" id="cb2" name="fav_language" value="">
+        </td>
+    </tr>
+
+      <tr>
+        <td>
+            3
+        </td>
+        <td>
+            Fire-chat
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            18-Apr-2024
+        </td>
+        <td>
+            Organizer3
+        </td>
+        <td>
+            20-Mar-2024
+        </td>
+        <td>
+            <input type="checkbox" id="cb3" name="fav_language" value="">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            3
+        </td>
+        <td>
+            Gala Event
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            18-Sep-2024
+        </td>
+        <td>
+            Organizer4
+        </td>
+        <td>
+            25-Mar-2024
+        </td>
+        <td>
+            <input type="checkbox" id="cb4" name="fav_language" value="">
+        </td>
+    </tr>
+
+  </table>
+     <br>
+     <br>
+   <div class="button-container">
+     <button class="button-15" id="approve" name="Approve">Approve</button>
+     <button class="button-15" id="reject" name="Reject">Reject</button>
+ </div>
+ </div>
+ </form>
+<!-- ------------------------------- -->
+
+
+<!--Activation-->
+
+<form id-="activate" method="POST" action="" align="center" >
+ <div id="activate" align="center" class="tabcontent">
+     <br>
+    <h1>My Pending Activations</h1>
+     <br><br><br>
+     <table>
+    <tr>
+        <th>Sl No</th>
+        <th>Event Name</th>
+        <th>Event Type</th>
+        <th>Scheduled On</th>
+        <th>Submitted by</th>
+        <th>Submission On</th>
+        <th>Activate</th>
+    </tr>
+
+<!--{% for row in data %} Implement here to fetch entered value-->
+<!--                <tr>-->
+<!--                    <td>{{ row[0] }}</td>-->
+<!--                    <td>{{ row[1] }}</td>-->
+<!--                    <td>{{ row[2] }}</td>-->
+<!--                    <td>{{ row[3] }}</td>-->
+<!--                    <td>{{ row[4] }}</td>-->
+<!--                    <td>{{ row[5] }}</td>-->
+<!--                    <td>{{ row[6] }}</td>-->
+<!--                    <td>{{ row[7] }}</td>-->
+<!--                    <td><input type="radio" name="row_checkbox" value="{{ row[0] }}"></td>-->
+<!--                </tr>-->
+
+
+<tr>
+        <td>
+            1
+        </td>
+        <td>
+            Townhall
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            25-Mar-2024
+        </td>
+        <td>
+            Organizer1
+        </td>
+        <td>
+            10-Apr-2024
+        </td>
+        <td>
+            <input type="button" id="b1" name="fav_language" value="Activate">
+        </td>
+    </tr>
+
+      <tr>
+        <td>
+            2
+        </td>
+        <td>
+            AMA
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            25-Jun-2024
+        </td>
+        <td>
+            Organizer2
+        </td>
+        <td>
+            20-Mar-2024
+        </td>
+        <td>
+             <input type="button" id="b2" name="fav_language" value="Activate">
+        </td>
+    </tr>
+
+      <tr>
+        <td>
+            3
+        </td>
+        <td>
+            Fire-chat
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            18-Apr-2024
+        </td>
+        <td>
+            Organizer3
+        </td>
+        <td>
+            20-Mar-2024
+        </td>
+        <td>
+             <input type="button" id="b3" name="fav_language" value="Activate">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            3
+        </td>
+        <td>
+            Gala Event
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            18-Sep-2024
+        </td>
+        <td>
+            Organizer4
+        </td>
+        <td>
+            25-Mar-2024
+        </td>
+        <td>
+             <input type="button" id="b4" name="fav_language" value="Activate">
+        </td>
+    </tr>
+
+  </table>
+ </div>
+ </form>
+
+<!--Reports and Metrics-->
+
+   <div id="reports" align="center" class="tabcontent">
+    <br>
+    <br>
+
+    <h1> Reports and Metrics</h1>
+    <br>
+    <br>
+
+        <select id="Department" align="right" required>
+                                  <option value="0">--Select--</option>
+                                  <option value="1">Cybersecurity</option>
+                                  <option value="2">CT</option>
+                                  <option value="3">TCOO</option>
+                                  <option value="4">EFT</option>
+                                  <option value="5">HR</option>
+         </select>
+    <br>
+    <br>
+       <input type="submit" value="Show Report" onclick=" openPage(event, 'report',1)">
+    <br>
+    <br>
+    <div id="report" class="tabcontent" align="center">
+    <div id="imageContainer" style="display: none;">
+        <img id="image" src="" alt="img">
+    </div>
+
+
+
+    </div>
+</div>
+
+
+<!--JavaScript for toggling submenus-->
+<script>
+
+
+        function toggleSubmenu(event) {
+          var submenu = event.target.nextElementSibling;
+          if (submenu.style.display === "block") {
+            submenu.style.display = "none";
+          } else {
+            submenu.style.display = "block";
+          }
+        }</script>
+
+<script>
+
+     function openPage(evt, page) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(page).style.display = "block";
+  evt.currentTarget.className += " active";
+  // Display Image
+
+            var selectedImage = document.getElementById('Department').value;
+            var imageElement = document.getElementById('image');
+            var imageContainer = document.getElementById('imageContainer');
+
+            if (selectedImage === '1') {
+                imageElement.src = '/stylesheets/image1.jpg';
+            } else if (selectedImage === '2') {
+                imageElement.src = '/stylesheets/image2.jpg';
+            } else if (selectedImage === '3') {
+                imageElement.src = '/stylesheets/image3.jpg';
+            } else if (selectedImage === '4') {
+                imageElement.src = '/stylesheets/image4.jpg';
+            } else if (selectedImage === '5') {
+                imageElement.src = '/stylesheets/image5.jpg';
+            }
+
+            imageContainer.style.display = 'block';
+
+}
+</script>
+
+
+</body>
+<!-- ------------------------------------- -->
+
+</html>

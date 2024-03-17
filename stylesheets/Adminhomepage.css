@@ -1,0 +1,328 @@
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.popup
+{
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+
+
+body{
+    background: #f5f6fa;
+}
+
+/*For all center text in span*/
+.centered {
+    text-align: center; /* Align text to the center */
+  }
+
+.wrapper .sidebar{
+    background: rgb(5, 68, 104);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+.wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wrapper .sidebar .profile img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #10558d;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+.wrapper .sidebar ul li a:hover,
+/* .wrapper .sidebar ul li a.active{
+    color: #0c7db1;
+
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+} */
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #0c7db1;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+.tabcontent {
+    display: none;
+    /*padding: 6px 12px;*/
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  .sidebar.close .nav-links li .iocn-link{
+    display: block
+  }
+  /* CSS for menu styling */
+.menu {
+    list-style-type: none;
+    padding: 0;
+  }
+  .menu li {
+    margin-bottom: 5px;
+  }
+  .menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  .submenu {
+    display: none;
+    padding-left: 20px;
+  }
+
+  .submenu ul {
+      background-color: #848ef8;
+  }
+  .submenu li a {
+    padding: 5px;
+    display: block;
+    text-decoration: none;
+    color: black;
+  }
+  button {
+    background-color: #4eb992;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    overflow:auto;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+     table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+          }
+
+          td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+
+/*button design*/
+
+.button-container {
+  text-align: center; /* Optional: Align buttons to the center */
+}
+.button-15 {
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: inline-block; /* Display buttons next to each other */
+  font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin-right: 10px; /* Optional: Add some space between buttons */
+}
+
+.button-15:disabled {
+  cursor: default;
+  opacity: .3;
+}
+
+.button-15:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+  text-decoration: none;
+}
+
+.button-15:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+  outline: none;
+}
+
+.button-15:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
+
+/*sidebar dropdown options*/
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/*pop-up Event notify*/
+/*        .popup {*/
+/*    display: none;*/
+/*    position: fixed;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    background-color: #fefefe;*/
+/*            align : Right;*/
+/*    padding: 50px;*/
+/*    border: 1px solid #ccc;*/
+/*    z-index: 1000;*/
+/*}*/
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/*Pop-up related CSS*/
+.custom-alert-notify {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.custom-alert-content-notify {
+  background-color: #fefefe;
+  margin: 20% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-notify {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.close-notify {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/*Success Message*/
+.success-message {
+  position: fixed; /* or 'absolute' if you want it relative to a parent */
+  top: 20px; /* Adjust the top margin as needed */
+  right: 20px; /* Position it 20px from the right edge */
+  display: none; /* Initially hide the success message */
+  background-color: rgba(5, 68, 104, 0.66); /* Bootstrap success color */
+  color: rgb(255, 255, 255); /* Bootstrap success text color */
+  padding: 10px;
+  border-radius: 4px;
+  transition: opacity 0.5s ease; /* Add transition for opacity */
+  opacity: 0; /* Start with opacity 0 */
+}
+
+
+.container {
+    text-align: center;
+}
