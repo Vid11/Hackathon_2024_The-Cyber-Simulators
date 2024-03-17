@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Tool</title>
+    <link rel="stylesheet" href="../stylesheets/Adminhomepage.css" type="text/css">
+    <script>// JavaScript for toggling submenus
+
+
+        function toggleSubmenu(event) {
+          var submenu = event.target.nextElementSibling;
+          if (submenu.style.display === "block") {
+            submenu.style.display = "none";
+          } else {
+            submenu.style.display = "block";
+          }
+        }</script>
+
+
+</head>
+
+<body>
+<!--Left Navigation Option-->
+    <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+            <div class="profile">
+                <img src="../stylesheets/images/profile_icon.jpg">
+                <h3>User name</h3>
+                <p>User role</p>
+            </div>
+            <ul>
+
+            <li>
+                    <a href="#" class="active" onclick="openPage(event, 'home')">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+
+
+                 <li>
+                    <a href="#" class="active" onclick="openPage(event, 'register')">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="centered">Register</span>
+                    </a>
+                </li>
+
+                 <li>
+                    <a href="#" class="active" onclick="openPage(event, 'check-in')">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="centered">Check-In</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="active" onclick="openPage(event, 'cancelRegister')">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="centered">Cancel Registration</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <br>
+            <br>
+          <form  id="logoutForm" method="POST" action="../Templates/login.html" align="center" >
+                <button class="button-15" type="submit" onclick="scripts/logout()">Logout</button>
+            </form>
+        </div>
+        </div>
+<!-- ------------------------------- -->
+
+
+<!--HomePage-->
+<div id="home" class="tabcontent" align="center">
+
+      <h1 align="center">Welcome to the Event Management and Registration Tool</h1>
+    <br>
+    <br>
+    <br>
+  <p> <h3>
+    This tool is simple and automated tool that helps the event organizers to effortlessly setup, schedule and manage events.
+    </h3><h3>
+    This tool also allows an Participant Management, Event Administration , managing the attendance from captured data and drive
+    </h3><h3>
+    reports like number of events conducted over a period, attendance metrics, statistics by group, event themes etc.
+</h3> <p>
+ </div>
+
+<!--Register-->
+<div id="register" class="tabcontent" align="center">
+<br>
+    <h1>My Events To Register</h1>
+     <br><br><br>
+     <table>
+    <tr>
+        <th>Sl No</th>
+        <th>Event Name</th>
+        <th>Event Type</th>
+        <th>Scheduled On</th>
+        <th>Select</th>
+    </tr>
+
+<!--{% for row in data %} Implement here to fetch entered value-->
+<!--                <tr>-->
+<!--                    <td>{{ row[0] }}</td>-->
+<!--                    <td>{{ row[1] }}</td>-->
+<!--                    <td>{{ row[2] }}</td>-->
+<!--                    <td>{{ row[3] }}</td>-->
+<!--                    <td>{{ row[4] }}</td>-->
+<!--                    <td>{{ row[5] }}</td>-->
+<!--                    <td>{{ row[6] }}</td>-->
+<!--                    <td>{{ row[7] }}</td>-->
+<!--                    <td><input type="radio" name="row_checkbox" value="{{ row[0] }}"></td>-->
+<!--                </tr>-->
+
+
+<tr>
+        <td>
+            1
+        </td>
+        <td>
+            Townhall
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            25-Mar-2024
+        </td>
+        <td>
+            <input onclick="displayCustomAlert('Successfully Registered for the event', 'A QR code will be added for your attendance')" class="button-15" type="button" id="register1" name="fav_language" value="Register">
+        </td>
+
+    </tr>
+
+      <tr>
+        <td>
+            2
+        </td>
+        <td>
+            AMA
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            25-Jun-2024
+        </td>
+        <td>
+             <input onclick="displayCustomAlert('Successfully Registered for the event', 'A QR code will be added for your attendance')" class="button-15" type="button" id="register2" name="fav_language" value="Register">
+        </td>
+    </tr>
+
+      <tr>
+        <td>
+            3
+        </td>
+        <td>
+            Fire-chat
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            18-Apr-2024
+        </td>
+        <td>
+             <input onclick="displayCustomAlert('Successfully Registered for the event', 'A QR code will be added for your attendance')" class="button-15" type="button" id="register3" name="fav_language" value="Register">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            4
+        </td>
+        <td>
+            Gala Event
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            18-Sep-2024
+        </td>
+        <td>
+             <input onclick="displayCustomAlert('Successfully Registered for the event', 'A QR code will be added for your attendance')" class="button-15" onclick="displayPopup()" type="button" id="register5" name="fav_language" value="Register">
+        </td>
+
+    </tr>
+<div id="custom-alert1" class="custom-alert-notify">
+  <div class="custom-alert-content-notify">
+          <span class="close-notify" onclick="closeCustomAlert()">&times;</span>
+    <p id="custom-alert-message1"></p>
+  </div>
+</div>
+  </table>
+</div>
+
+<!--Check-in-->
+<div id="check-in" class="tabcontent" align="center">
+<br>
+    <h1>My Registered Events</h1>
+     <br><br><br>
+     <table>
+    <tr>
+        <th>Sl No</th>
+        <th>Event Name</th>
+        <th>Event Type</th>
+        <th>Scheduled On</th>
+        <th>QR Code</th>
+    </tr>
+
+<!--{% for row in data %} Implement here to fetch entered value-->
+<!--                <tr>-->
+<!--                    <td>{{ row[0] }}</td>-->
+<!--                    <td>{{ row[1] }}</td>-->
+<!--                    <td>{{ row[2] }}</td>-->
+<!--                    <td>{{ row[3] }}</td>-->
+<!--                    <td>{{ row[4] }}</td>-->
+<!--                    <td>{{ row[5] }}</td>-->
+<!--                    <td>{{ row[6] }}</td>-->
+<!--                    <td>{{ row[7] }}</td>-->
+<!--                    <td><input type="radio" name="row_checkbox" value="{{ row[0] }}"></td>-->
+<!--                </tr>-->
+
+
+<tr>
+        <td>
+            1
+        </td>
+        <td>
+            Townhall
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            25-Mar-2024
+        </td>
+        <td>
+            <input  onclick="showImage('img1')" class="button-15" type="button" id="qrcode1" name="fav_language" value="QR Code">
+            <img src="../stylesheets/images/QR_Code.jpg" id="img1" style="display:none;">
+         </td>
+
+    </tr>
+
+      <tr>
+        <td>
+            2
+        </td>
+        <td>
+            AMA
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            25-Jun-2024
+        </td>
+        <td>
+             <input onclick="showImage('img1')" class="button-15" type="button" id="qrcode2" name="fav_language" value="QR Code">
+            <img src="../stylesheets/images/QR_Code.jpg" id="img2" style="display:none;">
+        </td>
+    </tr>
+
+      <tr>
+        <td>
+            3
+        </td>
+        <td>
+            Fire-chat
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            18-Apr-2024
+        </td>
+        <td>
+             <input onclick="showImage('img1')" class="button-15" type="button" id="qrcode3" name="fav_language" value="QR Code">
+            <img src="../stylesheets/images/QR_Code.jpg" id="img3" style="display:none;">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            4
+        </td>
+        <td>
+            Gala Event
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            18-Sep-2024
+        </td>
+        <td>
+             <input onclick="showImage('img1')" class="button-15" type="button" id="qrcode4" name="fav_language" value="QR Code">
+            <img src="../stylesheets/images/QR_Code.jpg" id="img4" style="display:none;">
+        </td>
+    </tr>
+
+  </table>
+    <br>
+    <br>
+    <br>
+       <!-- The Modal -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span onclick="hideImage()" style="cursor: pointer; float: right;">&times;</span>
+        <img id="popup-img">
+    </div>
+</div>
+
+
+</div>
+
+<!--Cancel Registration-->
+<div id="cancelRegister" class="tabcontent" align="center">
+<br>
+    <h1>My Registered Events</h1>
+     <br><br><br>
+     <table>
+    <tr>
+        <th>Sl No</th>
+        <th>Event Name</th>
+        <th>Event Type</th>
+        <th>Scheduled On</th>
+        <th>QR Code</th>
+    </tr>
+
+<!--{% for row in data %} Implement here to fetch entered value-->
+<!--                <tr>-->
+<!--                    <td>{{ row[0] }}</td>-->
+<!--                    <td>{{ row[1] }}</td>-->
+<!--                    <td>{{ row[2] }}</td>-->
+<!--                    <td>{{ row[3] }}</td>-->
+<!--                    <td>{{ row[4] }}</td>-->
+<!--                    <td>{{ row[5] }}</td>-->
+<!--                    <td>{{ row[6] }}</td>-->
+<!--                    <td>{{ row[7] }}</td>-->
+<!--                    <td><input type="radio" name="row_checkbox" value="{{ row[0] }}"></td>-->
+<!--                </tr>-->
+
+
+<tr>
+        <td>
+            1
+        </td>
+        <td>
+            Townhall
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            25-Mar-2024
+        </td>
+        <td>
+            <input type="checkbox" id="cancelRegister1" name="fav_language" value="">
+        </td>
+    </tr>
+
+      <tr>
+        <td>
+            2
+        </td>
+        <td>
+            AMA
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            25-Jun-2024
+        </td>
+        <td>
+             <input type="checkbox" id="cancelRegister2" name="fav_language" value="">
+        </td>
+    </tr>
+
+      <tr>
+        <td>
+            3
+        </td>
+        <td>
+            Fire-chat
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            18-Apr-2024
+        </td>
+        <td>
+             <input type="checkbox" id="cancelRegister3" name="fav_language" value="">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            4
+        </td>
+        <td>
+            Gala Event
+        </td>
+        <td>
+            Virtual
+        </td>
+        <td>
+            18-Sep-2024
+        </td>
+        <td>
+             <input type="checkbox" id="cancelRegister4" name="fav_language" value="">
+        </td>
+    </tr>
+
+  </table>
+    <br>
+    <br>
+    <br>
+    <div class="button-container">
+        <button class="button-15" id="cancelRegister-button">Cancel Registration</button>
+    </div>
+
+<div id="cancelRegister-message" class="success-message">
+  <p>Your Event has been De-registered Successfully..!!</p>
+</div>
+
+</div>
+
+
+<!--Pop-up for Register-->
+<script>
+    document.getElementById('register-button').addEventListener('click', function() {
+        displayCustomAlert('Successfully Registered for the event', 'A QR code will be added for your attendance')
+    });
+
+
+//     function displayCustomAlert(title, message) {
+//         var customAlert = document.getElementById("custom-alert");
+//         var customAlertMessage = document.getElementById("custom-alert-message");
+//   customAlertMessage.innerHTML = '<strong>' + title + '</strong><br>' + message;
+//   customAlert.style.display = "block";
+// }
+
+function closeCustomAlert() {
+  var customAlert = document.getElementById("custom-alert");
+  customAlert.style.display = "none";
+}
+
+</script>
+
+
+<!--Download Calendar Funtionality-->
+<script>
+    function displayCustomAlert(title, message) {
+
+    // Display custom alert with title and message
+    alert(title + '\n\n' + message);
+
+    // Create dummy calendar event data
+    var calendarData = "BEGIN:VCALENDAR\n" +
+                       "VERSION:2.0\n" +
+                       "PRODID:-//example.com//NONSGML Example//EN\n" +
+                       "BEGIN:VEVENT\n" +
+                       "UID:1234567890\n" +
+                       "DTSTAMP:20220317T120000Z\n" +
+                       "DTSTART:20220318T120000Z\n" +
+                       "DTEND:20220318T130000Z\n" +
+                       "SUMMARY:Event Title\n" +
+                       "DESCRIPTION:Event Description\n" +
+                       "END:VEVENT\n" +
+                       "END:VCALENDAR";
+
+
+
+    // Create a blob with the calendar data
+    var blob = new Blob([calendarData], { type: 'text/calendar;charset=utf-8' });
+
+    // Create a URL for the blob
+    var url = window.URL.createObjectURL(blob);
+
+    // Create a link element
+    var link = document.createElement('a');
+
+    // Set link attributes
+    link.href = url;
+    link.download = 'event.ics'; // Set the filename for the calendar file
+
+    // Append link to the document body
+    document.body.appendChild(link);
+
+    // Trigger the download
+    link.click();
+
+    // Clean up
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+}
+</script>
+<script>
+
+     function openPage(evt, page) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(page).style.display = "block";
+  evt.currentTarget.className += " active";
+  // Display Image
+
+            var selectedImage = document.getElementById('Department').value;
+            var imageElement = document.getElementById('image');
+            var imageContainer = document.getElementById('imageContainer');
+
+            if (selectedImage === '1') {
+                imageElement.src = '/stylesheets/image1.jpg';
+            } else if (selectedImage === '2') {
+                imageElement.src = '/stylesheets/image2.jpg';
+            } else if (selectedImage === '3') {
+                imageElement.src = '/stylesheets/image3.jpg';
+            } else if (selectedImage === '4') {
+                imageElement.src = '/stylesheets/image4.jpg';
+            } else if (selectedImage === '5') {
+                imageElement.src = '/stylesheets/image5.jpg';
+            }
+
+            imageContainer.style.display = 'block';
+
+}
+</script>
+
+<!--Pop-up for check-in-->
+
+<script>
+    function showImage(imgId) {
+        var imgSrc = document.getElementById(imgId).src;
+        document.getElementById('popup-img').src = imgSrc;
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function hideImage() {
+        document.getElementById('popup').style.display = 'none';
+    }
+</script>
+
+
+<!--Pop-up cancel Registeration-->
+<script>
+    document.getElementById('cancelRegister-button').addEventListener('click', function() {
+  var successMessage = document.getElementById('cancelRegister-message');
+
+  // Toggle the display of the success message
+  successMessage.style.display = 'block';
+
+  // Add animation by changing opacity
+  setTimeout(function() {
+    successMessage.style.opacity = '1';
+  }, 100);
+
+  // Hide the success message after 3 seconds
+  setTimeout(function() {
+    successMessage.style.opacity = '0';
+  }, 3000);
+
+  // Hide the success message and reset opacity after animation
+  setTimeout(function() {
+    successMessage.style.display = 'none';
+    successMessage.style.opacity = '0';
+  }, 3500);
+});
+</script>
+
+</body>
+</html>
